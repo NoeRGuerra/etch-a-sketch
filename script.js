@@ -34,6 +34,10 @@ function newGrid(size){
 const btn = document.querySelector("button");
 btn.addEventListener("click", () => {
     let size = parseInt(prompt("Enter new amount of squares per side"));
+    if (typeof(size) != "number" || size < 0){
+        alert("Input only positive numbers");
+        size = 1;
+    }
     size = size > 100 ? 100 : size;
     newGrid(size);
 });
